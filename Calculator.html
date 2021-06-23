@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+
+	<style>
+		*
+		{
+			margin:0;
+			padding:0;	
+			font-family: 'Nunito',sans-serif;		
+		}
+		#heading
+		{
+			text-align:center;
+			font-family:Arial;
+			font-size:40px;
+			text-shadow:1px 2px 8px white;
+			color:#800020;
+		}
+
+		.calc_body
+		{
+			position:absolute;
+			left:37%;
+			top:20%;
+			background-color:white;
+			box-shadow:2px 2px 10px  rgba(0, 0, 0, 0.4);
+			border-radius:8px;
+			width:343px;
+		}
+
+		.result
+		{
+			height:80px;
+			width:302px;
+			background-color: black;
+			font-size:2em;
+			border-radius:8px 8px 0 0;
+			padding:20px;
+			color:white;
+			
+		}
+
+		.calci
+		{
+			display:grid;
+			grid-template-columns: auto auto auto auto ;
+		}
+
+		.button
+		{
+			height:50px;
+			width:75px;
+			font-size: 1.2em;
+			border-radius:50%;
+			text-align: center;
+			margin:2px;
+		}
+		.button:hover
+		{
+			background-color:#e0e0e0;
+		}
+
+		#equal
+		{
+			background-color: orange;
+		}
+
+	</style>
+
+
+	<script>
+		function myclick(a)
+		{
+			myform.display.value+=a;
+		}
+		function equ()
+		{
+			myform.display.value=eval(myform.display.value);
+		}
+		function ac()
+		{
+			myform.display.value=" ";
+		}
+		function backspace()
+		{
+			var prevalue=myform.display.value;
+			myform.display.value=prevalue.substr(0,prevalue.length-1);
+		}
+
+
+	</script>
+
+	<body bgcolor="#A2A2D0">
+		<h1 id="heading">Calculator</h1><br>
+		<hr>
+
+		<div class="calc_body">
+		
+		<form  name="myform">
+		<input type="text" class="result" name="display"><br>
+		<input class="button" type="button" name=o value="+-" onclick="myclick('+-')">
+		<input class="button" type="button" name=per value="%" onclick="myclick('%')">
+		<input class="button" type="button" name=c value="C" onclick="ac()">
+		<input class="button" type="button" name=del value="DEL" onclick="backspace()">
+		<br>
+
+		<input class="button" type="button" name=seven value="7"  onclick="myclick('7')">
+		<input class="button" type="button" name=eight value="8" onclick="myclick('8')">
+		<input class="button" type="button" name=nine value="9" onclick="myclick('9')">
+		<input class="button" type="button" name=add value="+" onclick="myclick('+')"><br>
+
+		<input class="button" type="button" name=four value="4" onclick="myclick('4')">
+		<input class="button" type="button" name=five value="5" onclick="myclick('5')">
+		<input class="button" type="button" name=six value="6" onclick="myclick('6')">
+		<input class="button" type="button" name=sub value="-" onclick="myclick('-')"><br>
+
+		<input class="button" type="button" name=one value="1" onclick="myclick('1')">
+		<input class="button" type="button" name=two value="2" onclick="myclick('2')">
+		<input class="button" type="button" name=three value="3" onclick="myclick('3')">
+		<input class="button" type="button" name=mul value="*" onclick="myclick('*')"><br>
+
+		<input class="button" type="button" name=pt value="." onclick="myclick('.')">
+		<input class="button" type="button" name=zero value="0" onclick="myclick('0')">
+		<input class="button" type="button" name=eq id="equal" value="=" onclick="equ()">
+		<input class="button" type="button" name=div value="/" onclick="myclick('/')"><br>
+
+		</div>	
+	</form>
+
+
+	</body>
+
+
+</html>
